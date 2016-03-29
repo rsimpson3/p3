@@ -19,7 +19,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/practice',function() {
 
-        $generator = new Badcow\LoremIpsum\Generator();
+        $generator = new LoremIpsum();
         $paragraphs = $generator->getParagraphs(3);
         echo implode('<p>', $paragraphs);
         return '';
