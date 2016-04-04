@@ -14,15 +14,14 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', function () {
-        return 'Welcome to P3 by Robert Simpson';
+        return view('welcome');
     });
 
-    Route::get('/practice',function() {
+    Route::get('/text/create', 'FriendController@getCreate');
+    Route::post('/text/create', 'FriendController@postCreate');
 
-        $generator = new LoremIpsum();
-        $paragraphs = $generator->getParagraphs(3);
-        echo implode('<p>', $paragraphs);
-        return '';
+    Route::get('/practice',function() {
+        return 'This is only a practice route.';
     });
 
 });
