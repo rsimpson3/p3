@@ -17,8 +17,10 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     });
 
-    Route::get('/text/create', 'FriendController@getCreate');
-    Route::post('/text/create', 'FriendController@postCreate');
+    Route::get('/text/create', 'TextController@getCreate');
+    Route::post('/text/create', 'TextController@postCreate');
+    Route::get('/friend/create', 'FriendController@getCreate');
+    Route::post('/friend/create', 'FriendController@postCreate');
 
     Route::get('/practice',function() {
         return 'This is only a practice route.';

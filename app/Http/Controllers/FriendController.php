@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use LoremIpsum;
+use Faker\Factory as Faker;
 
 class FriendController extends Controller {
 
     /**
-     * Responds to requests to GET /text/create
+     * Responds to requests to GET /friend/create
      */
     public function getCreate() {
-        return view('text.create');
+        return view('friend.create');
     }
 
     /**
@@ -22,20 +22,23 @@ class FriendController extends Controller {
         // dd($request);
         // validate numeric input
         $this->validate($request,[
-            'paranum' => 'required|numeric',
+            'friends' => 'required|numeric|max:10',
         ]);
 
-        // get number from request object
-        $data = $request->input('paranum');
-        // check that integer pulled from request object
-        // pass to LoremIpsum package
-        $generator = new LoremIpsum();
-        $paragraphs = $generator->getParagraphs($data);
+        // extract values from $request object
+        $friend_num = $request->input('friends');
+        $country = $request->input('country');
+        $email = $request->input('email');
 
-        // send LoremIpsum output to show view
-        return view('text.show')->with([
-            'data' => $data,
-            'paragraphs' => $paragraphs,
+        // call faker method
+        $faker = Faker::create();
+
+        // send user inputs & faker object to show view
+        return view('friend.show')->with([
+            'friend_num' => $friend_num,
+            'country' => $country,
+            'email' => $email,
+            'faker'=> $faker,
         ]);
     }
 } #end of class

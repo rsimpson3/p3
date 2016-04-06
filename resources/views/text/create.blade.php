@@ -25,7 +25,7 @@
                name='paranum'
                value='{{ old('paranum') }}'
            >
-           <div class='error'>{{ $errors->first('paranum') }} </div>
+           <div class='error'>{{ $errors->first('paranum') .'message'}} </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Generate Lorem Ipsum</button>
