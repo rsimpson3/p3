@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>
-        {{-- Yield the title if it exists, otherwise default to 'Developers Best Friend' --}}
-        @yield('title','Developers Best Friend')
+        {{-- Yield the title if it exists, otherwise default to 'Developer's Best Friend' --}}
+        @yield('title','Developer\'s Best Friend')
     </title>
 
     <meta charset='utf-8'>

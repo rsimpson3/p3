@@ -22,11 +22,11 @@ class TextController extends Controller {
         // dd($request);
         // validate numeric input
         $this->validate($request,[
-            'paranum' => 'required|numeric|max:99',
+            'paragraph_number' => 'required|numeric|min:1|max:99',
         ]);
 
         // get number from request object
-        $data = $request->input('paranum');
+        $data = $request->input('paragraph_number');
         // check that integer pulled from request object
         // pass to LoremIpsum package
         $generator = new LoremIpsum();

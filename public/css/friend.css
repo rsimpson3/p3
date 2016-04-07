@@ -74,7 +74,13 @@ input[type=text],input[type=password],select {
     list-style-type:none;
 }
 
+.friendtable th {
+    padding-left: 1.3em;
+}
 
+.friendtable td {
+    padding-left: 1.3em;
+}
 
 /*----------------------------------------------------
 Flash message

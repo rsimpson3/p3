@@ -18,7 +18,7 @@
         {{ csrf_field() }}
 
         <div class='form-group'>
-           <label>Enter number of friends:</label>
+           <label>Enter number of friends: (limit 10)</label>
            <input
                type='text'
                id='friends'
@@ -39,7 +39,7 @@
                  name='email'
                  value='1'
              >
-           <div class='error'>{{ $errors->first('friends') .'message'}} </div>
+           <div class='error'>{{ $errors->first('friends') }} </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Give Me Some Friends</button>

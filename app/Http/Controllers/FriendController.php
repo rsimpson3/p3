@@ -26,19 +26,45 @@ class FriendController extends Controller {
         ]);
 
         // extract values from $request object
-        $friend_num = $request->input('friends');
+        // get user input for # of friends
+        $friend_Num = $request->input('friends');
+        // get user input for country checkbox
         $country = $request->input('country');
+        // get user input for email checkbox
         $email = $request->input('email');
 
         // call faker method
         $faker = Faker::create();
 
-        // send user inputs & faker object to show view
+        // create array and add values
+        $p = 0;
+        $friend_Array = [];
+        while($p < $friend_Num) {
+          $friend_Array[$p]['name'] = $faker->name;
+              if ($country == 1) {
+                  $friend_Array[$p]['country'] = $faker->country;
+              }
+              else {
+                  $country == 0;
+              }
+              if ($email == 1) {
+                  $friend_Array[$p]['email'] = $faker->email;
+              }
+              else {
+                  $email == 0;
+              }
+          $p++;
+        }
+        // dd($friend_Array);
+
+        // send user inputs & friend array to show view
         return view('friend.show')->with([
-            'friend_num' => $friend_num,
+            'friend_Num' => $friend_Num,
+            'friend_Array'=> $friend_Array,
             'country' => $country,
             'email' => $email,
-            'faker'=> $faker,
         ]);
+
+
     }
 } #end of class

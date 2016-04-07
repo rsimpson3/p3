@@ -18,14 +18,14 @@
         {{ csrf_field() }}
 
         <div class='form-group'>
-           <label>* Enter number of paragraphs:</label>
+           <label>* Enter number of paragraphs: (limit 99)</label>
            <input
                type='text'
-               id='paranum'
-               name='paranum'
-               value='{{ old('paranum') }}'
+               id='paragraph_number'
+               name='paragraph_number'
+               value='{{ old('paragraph_number') }}'
            >
-           <div class='error'>{{ $errors->first('paranum') .'message'}} </div>
+           <div class='error'>{{ $errors->first('paragraph_number') }} </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Generate Lorem Ipsum</button>

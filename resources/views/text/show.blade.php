@@ -9,8 +9,8 @@
 
     @if(count ($paragraphs) > 0)
         <h1>Lorem Ipsum Text</h1>
-        @foreach ($paragraphs as $paragraphs)
-            <p> {{ $paragraphs }} </p>
+        @foreach ($paragraphs as $paragraph)
+            <p> {{ $paragraph }} </p>
         @endforeach
     @else
         <p>Enter number of paragraphs to generate. </p>

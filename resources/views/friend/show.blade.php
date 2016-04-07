@@ -7,21 +7,27 @@
 
 @section('content')
 
-    @if(count ($friend_num) > 0)
+@if(isset($friend_Array))
+    @if(count ($friend_Num) > 0)
         <h1>Here are some friends</h1>
-        <?php
-        for ($i=0; $i < $friend_num; $i++) {
-          echo $faker->name, "\n";
-          if ($country == 1) {
-              echo $faker->country, "\n";
-          }
-          if ($email == 1) {
-             echo $faker->safeEmail ;
-          }
-          echo "<br>";
-        }
-        ?>
+        <table class="friendtable">
+            <tr>
+                <th>Names</th>
+            </tr>
+            @foreach ($friend_Array as $friend )
+                <tr> <td> {{ $friend['name'] }} </td>
+                @if ($country != 0)
+                    <td> {{ $friend['country'] }} </td>
+                @endif
+                @if ($email != 0 )
+                    <td> {{ $friend['email'] }} </td>
+                @endif
+            @endforeach
+            </tr>
+        </table>
+
     @else
         <p>How many friends would you like? Enter a number.  </p>
     @endif
+@endif
 @stop
