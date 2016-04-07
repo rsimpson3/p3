@@ -22,7 +22,7 @@ class FriendController extends Controller {
         // dd($request);
         // validate numeric input
         $this->validate($request,[
-            'friends' => 'required|numeric|max:10',
+            'friends' => 'required|numeric|min:1|max:10',
         ]);
 
         // extract values from $request object

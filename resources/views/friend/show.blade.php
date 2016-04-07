@@ -25,7 +25,6 @@
             @endforeach
             </tr>
         </table>
-
     @else
         <p>How many friends would you like? Enter a number.  </p>
     @endif
