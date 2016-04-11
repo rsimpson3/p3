@@ -29,6 +29,7 @@
         src='/images/friend_icon_noun_cc.png'
         style='width:150px'
         alt='Friend Logo'>
+        </a>
     </header>
 
     <nav>
